@@ -37,37 +37,12 @@ app.post("/generate-code", async (req, res) => {
     });
 
     const generatedCode = response.choices[0].message.content;
-    console.log(generatedCode.split("\n\n"));
-    console.log(generatedCode.split("\n\n").length)
-
-    // const input = generatedCode; // paste the full content here
-
-    // const backendCodeMatch = input.match(
-    //   /### 1\. Backend Code *?```javascript\n([\s\S]*?)```/
-    // );
-    // const testCodeMatch = input.match(
-    //   /### 2\. Unit Tests *?```javascript\n([\s\S]*?)```/
-    // );
-    // const explanationMatch = input.match(/### 3\. Explanation([\s\S]*)/);
-
-    // const backendCode = backendCodeMatch ? backendCodeMatch[1].trim() : "";
-    // const unitTests = testCodeMatch ? testCodeMatch[1].trim() : "";
-    // const explanation = explanationMatch ? explanationMatch[1].trim() : "";
-
-    // console.log("🔧 Backend Code:\n", backendCode);
-    // console.log("\n🧪 Testing Code:\n", unitTests);
-    // console.log("\n📘 Explanation:\n", explanation);
-    // const [backendCode, unitTests, explanation] = generatedCode.split("\n\n");
-
+    
     res.json({
       generatedCode,
     });
 
-    // res.json({
-    //   backendCode,
-    //   unitTests,
-    //   explanation,
-    // });
+
   } catch (error) {
     res.status(500).send("Error generating code");
   }
