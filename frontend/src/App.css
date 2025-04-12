@@ -33,6 +33,11 @@ button:disabled {
 
 .result {
   /* background: #f0f0f0; */
+  width: 800px;
+  height: 1000px;
+  border: 1px solid black;
+  overflow-x: auto;
+  overflow-y: auto;
   margin-top: 2rem;
   padding: 1rem;
   border-radius: 10px;

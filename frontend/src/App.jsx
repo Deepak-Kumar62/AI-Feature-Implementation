@@ -11,6 +11,7 @@ function App() {
     if (!ticket.trim()) return alert("Please enter a Jira ticket description");
 
     setLoading(true);
+    setGeneratedCode("")
     try {
       const res = await axios.post("http://localhost:3000/generate-code", {
         ticketDescription: ticket,
